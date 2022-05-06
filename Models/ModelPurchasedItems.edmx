@@ -1,0 +1,118 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="PurchasedItemsModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'Stocks.dbo.PurchasedItems' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="PurchasedItems">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ItemId" Type="int" />
+          <Property Name="SupplierId" Type="int" />
+          <Property Name="PurchaseQuantity" Type="decimal" Precision="8" Scale="2" />
+          <Property Name="PurchasePrice" Type="decimal" Precision="12" Scale="2" />
+          <Property Name="PurchaseDate" Type="datetime" />
+          <Property Name="Observations" Type="varchar" MaxLength="500" />
+          <Property Name="MPurchased" Type="varchar" MaxLength="20" />
+          <Property Name="MonthNumber" Type="tinyint" />
+          <Property Name="YPurchased" Type="smallint" />
+          <Property Name="PurchasedInApp" Type="bit" />
+          <Property Name="BankDebit" Type="bit" />
+          <Property Name="DebitNumber" Type="int" />
+          <Property Name="PDocNum" Type="int" />
+          <Property Name="FakePurchase" Type="bit" />
+          <Property Name="Disponibilidad" Type="int" />
+        </EntityType>
+        <EntityContainer Name="PurchasedItemsModelStoreContainer">
+          <EntitySet Name="PurchasedItems" EntityType="Self.PurchasedItems" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [PurchasedItems].[id] AS [id], 
+    [PurchasedItems].[ItemId] AS [ItemId], 
+    [PurchasedItems].[SupplierId] AS [SupplierId], 
+    [PurchasedItems].[PurchaseQuantity] AS [PurchaseQuantity], 
+    [PurchasedItems].[PurchasePrice] AS [PurchasePrice], 
+    [PurchasedItems].[PurchaseDate] AS [PurchaseDate], 
+    [PurchasedItems].[Observations] AS [Observations], 
+    [PurchasedItems].[MPurchased] AS [MPurchased], 
+    [PurchasedItems].[MonthNumber] AS [MonthNumber], 
+    [PurchasedItems].[YPurchased] AS [YPurchased], 
+    [PurchasedItems].[PurchasedInApp] AS [PurchasedInApp], 
+    [PurchasedItems].[BankDebit] AS [BankDebit], 
+    [PurchasedItems].[DebitNumber] AS [DebitNumber], 
+    [PurchasedItems].[PDocNum] AS [PDocNum], 
+    [PurchasedItems].[FakePurchase] AS [FakePurchase], 
+    [PurchasedItems].[Disponibilidad] AS [Disponibilidad]
+    FROM [dbo].[PurchasedItems] AS [PurchasedItems]</DefiningQuery>
+          </EntitySet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="PurchasedItemsModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="PurchasedItems">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ItemId" Type="Int32" />
+          <Property Name="SupplierId" Type="Int32" />
+          <Property Name="PurchaseQuantity" Type="Decimal" Precision="8" Scale="2" />
+          <Property Name="PurchasePrice" Type="Decimal" Precision="12" Scale="2" />
+          <Property Name="PurchaseDate" Type="DateTime" Precision="3" />
+          <Property Name="MPurchased" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="MonthNumber" Type="Byte" />
+          <Property Name="YPurchased" Type="Int16" />
+        </EntityType>
+        <EntityContainer Name="PurchasedItemsEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="PurchasedItems" EntityType="Self.PurchasedItems" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="PurchasedItemsModelStoreContainer" CdmEntityContainer="PurchasedItemsEntities">
+          <EntitySetMapping Name="PurchasedItems">
+            <EntityTypeMapping TypeName="PurchasedItemsModel.PurchasedItems">
+              <MappingFragment StoreEntitySet="PurchasedItems">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="ItemId" ColumnName="ItemId" />
+                <ScalarProperty Name="SupplierId" ColumnName="SupplierId" />
+                <ScalarProperty Name="PurchaseQuantity" ColumnName="PurchaseQuantity" />
+                <ScalarProperty Name="PurchasePrice" ColumnName="PurchasePrice" />
+                <ScalarProperty Name="PurchaseDate" ColumnName="PurchaseDate" />
+                <ScalarProperty Name="MPurchased" ColumnName="MPurchased" />
+                <ScalarProperty Name="MonthNumber" ColumnName="MonthNumber" />
+                <ScalarProperty Name="YPurchased" ColumnName="YPurchased" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

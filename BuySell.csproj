@@ -1,0 +1,1371 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{1D201446-0280-4F96-B910-20F92726984F}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>BuySell</RootNamespace>
+    <AssemblyName>BuySell</AssemblyName>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>false</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort>44311</IISExpressSSLPort>
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>packages\Newtonsoft.Json.12.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.AspNet.WebApi.Client.5.2.7\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.AspNet.WebApi.Core.5.2.7\lib\net45\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.AspNet.WebApi.WebHost.5.2.7\lib\net45\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>packages\Microsoft.AspNet.Mvc.5.2.7\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>packages\Microsoft.AspNet.Razor.3.2.7\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Areas\HelpPage\ApiDescriptionExtensions.cs" />
+    <Compile Include="Areas\HelpPage\App_Start\HelpPageConfig.cs" />
+    <Compile Include="Areas\HelpPage\Controllers\HelpController.cs" />
+    <Compile Include="Areas\HelpPage\HelpPageAreaRegistration.cs" />
+    <Compile Include="Areas\HelpPage\HelpPageConfigurationExtensions.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\CollectionModelDescription.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\ComplexTypeModelDescription.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\DictionaryModelDescription.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\EnumTypeModelDescription.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\EnumValueDescription.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\IModelDocumentationProvider.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\KeyValuePairModelDescription.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\ModelDescription.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\ModelDescriptionGenerator.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\ModelNameAttribute.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\ModelNameHelper.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\ParameterAnnotation.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\ParameterDescription.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\SimpleTypeModelDescription.cs" />
+    <Compile Include="Areas\HelpPage\Models\HelpPageApiModel.cs" />
+    <Compile Include="Areas\HelpPage\SampleGeneration\HelpPageSampleGenerator.cs" />
+    <Compile Include="Areas\HelpPage\SampleGeneration\HelpPageSampleKey.cs" />
+    <Compile Include="Areas\HelpPage\SampleGeneration\ImageSample.cs" />
+    <Compile Include="Areas\HelpPage\SampleGeneration\InvalidSample.cs" />
+    <Compile Include="Areas\HelpPage\SampleGeneration\ObjectGenerator.cs" />
+    <Compile Include="Areas\HelpPage\SampleGeneration\SampleDirection.cs" />
+    <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
+    <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
+    <Compile Include="Controllers\BankBalanceController.cs" />
+    <Compile Include="Controllers\BankInformationController.cs" />
+    <Compile Include="Controllers\BankSummariesController.cs" />
+    <Compile Include="Controllers\BuySellController.cs" />
+    <Compile Include="Controllers\CarModelsController.cs" />
+    <Compile Include="Controllers\CatMapController.cs" />
+    <Compile Include="Controllers\CatMapSyncController.cs" />
+    <Compile Include="Controllers\CompaniesController.cs" />
+    <Compile Include="Controllers\ConfigController.cs" />
+    <Compile Include="Controllers\DividendosController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\InvestmentController.cs" />
+    <Compile Include="Controllers\MaintenanceRecordsController.cs" />
+    <Compile Include="Controllers\MapController.cs" />
+    <Compile Include="Controllers\MapSyncController.cs" />
+    <Compile Include="Controllers\MarketPricesController.cs" />
+    <Compile Include="Controllers\MarketPriceSeguimientoController.cs" />
+    <Compile Include="Controllers\MonthNamesController.cs" />
+    <Compile Include="Controllers\ParametersController.cs" />
+    <Compile Include="Controllers\PriceListsController.cs" />
+    <Compile Include="Controllers\PricesController.cs" />
+    <Compile Include="Controllers\PurchasedItemsController.cs" />
+    <Compile Include="Controllers\PurchasedItemsSyncController.cs" />
+    <Compile Include="Controllers\SalesPersonsController.cs" />
+    <Compile Include="Controllers\SelfLoansController.cs" />
+    <Compile Include="Controllers\SoldItemsController.cs" />
+    <Compile Include="Controllers\SoldItemsSyncController.cs" />
+    <Compile Include="Controllers\SpenceCategoryController.cs" />
+    <Compile Include="Controllers\SpencesController.cs" />
+    <Compile Include="Controllers\SyncAuditController.cs" />
+    <Compile Include="Controllers\ValuesController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\BankSummaries.cs">
+      <DependentUpon>ModelBankSummaries.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Config.cs">
+      <DependentUpon>ModelConfig.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MarketPriceSeguimiento.cs">
+      <DependentUpon>ModelMarketPriceSeguimiento.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ModelBankSummaries.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelBankSummaries.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ModelBankSummaries.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelBankSummaries.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ModelBankSummaries.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelBankSummaries.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ModelConfig.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelConfig.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ModelConfig.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelConfig.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ModelConfig.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelConfig.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ModelMarketPriceSeguimiento.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelMarketPriceSeguimiento.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ModelMarketPriceSeguimiento.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelMarketPriceSeguimiento.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ModelMarketPriceSeguimiento.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelMarketPriceSeguimiento.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\BankBalance.cs">
+      <DependentUpon>ModelBankBalance.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\BankInformation.cs">
+      <DependentUpon>ModelBankInformation.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\BuySell.cs">
+      <DependentUpon>ModelBuySell.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CarModels.cs">
+      <DependentUpon>ModelCarModels.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CatMap.cs">
+      <DependentUpon>ModelCatMap.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CatMap_Sync.cs">
+      <DependentUpon>ModelCatMapSync.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Companies.cs">
+      <DependentUpon>ModelCompanies.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Dividendos.cs">
+      <DependentUpon>ModelDividendos.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Investment.cs">
+      <DependentUpon>ModelInvestment.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MaintenanceRecords.cs">
+      <DependentUpon>ModelMaintenanceRecords.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Map.cs">
+      <DependentUpon>ModelMap.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Map_Sync.cs">
+      <DependentUpon>ModelMapSync.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MarketPrices.cs">
+      <DependentUpon>ModelMarketPrices.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ModelBankBalance.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelBankBalance.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ModelBankBalance.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelBankBalance.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ModelBankBalance.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelBankBalance.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ModelBankInformation.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelBankInformation.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ModelBankInformation.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelBankInformation.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ModelBankInformation.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelBankInformation.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ModelBuySell.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelBuySell.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ModelBuySell.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelBuySell.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ModelBuySell.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelBuySell.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ModelCarModels.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelCarModels.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ModelCarModels.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelCarModels.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ModelCarModels.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelCarModels.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ModelCatMap.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelCatMap.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ModelCatMap.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelCatMap.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ModelCatMap.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelCatMap.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ModelCatMapSync.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelCatMapSync.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ModelCatMapSync.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelCatMapSync.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ModelCatMapSync.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelCatMapSync.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ModelCompanies.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelCompanies.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ModelCompanies.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelCompanies.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ModelCompanies.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelCompanies.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ModelDividendos.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelDividendos.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ModelDividendos.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelDividendos.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ModelDividendos.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelDividendos.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ModelInvestment.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelInvestment.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ModelInvestment.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelInvestment.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ModelInvestment.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelInvestment.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ModelMaintenanceRecords.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelMaintenanceRecords.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ModelMaintenanceRecords.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelMaintenanceRecords.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ModelMaintenanceRecords.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelMaintenanceRecords.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ModelMap.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelMap.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ModelMap.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelMap.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ModelMap.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelMap.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ModelMapSync.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelMapSync.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ModelMapSync.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelMapSync.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ModelMapSync.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelMapSync.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ModelMarketPrices.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelMarketPrices.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ModelMarketPrices.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelMarketPrices.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ModelMarketPrices.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelMarketPrices.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ModelMonthNames.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelMonthNames.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ModelMonthNames.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelMonthNames.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ModelMonthNames.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelMonthNames.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ModelParameters.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelParameters.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ModelParameters.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelParameters.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ModelParameters.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelParameters.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ModelPriceLists.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelPriceLists.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ModelPriceLists.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelPriceLists.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ModelPriceLists.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelPriceLists.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ModelPrices.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelPrices.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ModelPrices.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelPrices.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ModelPrices.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelPrices.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ModelPurchasedItems.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelPurchasedItems.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ModelPurchasedItems.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelPurchasedItems.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ModelPurchasedItems.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelPurchasedItems.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ModelPurchasedItemsSync.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelPurchasedItemsSync.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ModelPurchasedItemsSync.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelPurchasedItemsSync.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ModelPurchasedItemsSync.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelPurchasedItemsSync.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ModelSalesPersons.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelSalesPersons.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ModelSalesPersons.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelSalesPersons.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ModelSalesPersons.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelSalesPersons.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ModelSelfLoans.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelSelfLoans.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ModelSelfLoans.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelSelfLoans.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ModelSelfLoans.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelSelfLoans.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ModelSoldItems.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelSoldItems.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ModelSoldItems.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelSoldItems.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ModelSoldItems.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelSoldItems.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ModelSoldItemsSync.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelSoldItemsSync.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ModelSoldItemsSync.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelSoldItemsSync.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ModelSoldItemsSync.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelSoldItemsSync.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ModelSpenceCategory.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelSpenceCategory.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ModelSpenceCategory.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelSpenceCategory.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ModelSpenceCategory.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelSpenceCategory.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ModelSpences.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelSpences.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ModelSpences.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelSpences.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ModelSpences.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelSpences.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ModelSyncAudit.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelSyncAudit.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ModelSyncAudit.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelSyncAudit.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ModelSyncAudit.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelSyncAudit.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MonthNames.cs">
+      <DependentUpon>ModelMonthNames.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Parameters.cs">
+      <DependentUpon>ModelParameters.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PriceLists.cs">
+      <DependentUpon>ModelPriceLists.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Prices.cs">
+      <DependentUpon>ModelPrices.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PurchasedItems.cs">
+      <DependentUpon>ModelPurchasedItems.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PurchasedItems_Sync.cs">
+      <DependentUpon>ModelPurchasedItemsSync.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SalesPersons.cs">
+      <DependentUpon>ModelSalesPersons.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SelfLoans.cs">
+      <DependentUpon>ModelSelfLoans.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SoldItems.cs">
+      <DependentUpon>ModelSoldItems.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SoldItems_Sync.cs">
+      <DependentUpon>ModelSoldItemsSync.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SpenceCategory.cs">
+      <DependentUpon>ModelSpenceCategory.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Spences.cs">
+      <DependentUpon>ModelSpences.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SyncAudit.cs">
+      <DependentUpon>ModelSyncAudit.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ViewModel\BankBalanceViewModel.cs" />
+    <Compile Include="Models\ViewModel\BankInformationViewModel.cs" />
+    <Compile Include="Models\ViewModel\BankSummariesViewModel.cs" />
+    <Compile Include="Models\ViewModel\BuySellViewModel.cs" />
+    <Compile Include="Models\ViewModel\CarModelsViewModel.cs" />
+    <Compile Include="Models\ViewModel\CatMapSyncViewModel.cs" />
+    <Compile Include="Models\ViewModel\CatMapViewModel.cs" />
+    <Compile Include="Models\ViewModel\CompaniesViewModel.cs" />
+    <Compile Include="Models\ViewModel\ConfigViewModel.cs" />
+    <Compile Include="Models\ViewModel\DividendosViewModel.cs" />
+    <Compile Include="Models\ViewModel\InvestmentViewModel.cs" />
+    <Compile Include="Models\ViewModel\MaintenanceRecordsViewModel.cs" />
+    <Compile Include="Models\ViewModel\MapSyncViewModel.cs" />
+    <Compile Include="Models\ViewModel\MapViewModel.cs" />
+    <Compile Include="Models\ViewModel\MarketPriceSeguimientoViewModel.cs" />
+    <Compile Include="Models\ViewModel\MarketPricesViewModel.cs" />
+    <Compile Include="Models\ViewModel\MonthNamesViewModel.cs" />
+    <Compile Include="Models\ViewModel\ParametersViewModel.cs" />
+    <Compile Include="Models\ViewModel\PriceListsViewModel.cs" />
+    <Compile Include="Models\ViewModel\PricesViewModel.cs" />
+    <Compile Include="Models\ViewModel\PurchasedItemsSyncViewModel.cs" />
+    <Compile Include="Models\ViewModel\PurchasedItemsViewModel.cs" />
+    <Compile Include="Models\ViewModel\SalesPersonsViewModel.cs" />
+    <Compile Include="Models\ViewModel\SelfLoansViewModel.cs" />
+    <Compile Include="Models\ViewModel\SoldItemsSyncViewModel.cs" />
+    <Compile Include="Models\ViewModel\SoldItemsViewModel.cs" />
+    <Compile Include="Models\ViewModel\SpenceCategoryViewModel.cs" />
+    <Compile Include="Models\ViewModel\SpencesViewModel.cs" />
+    <Compile Include="Models\ViewModel\SyncAuditViewModel.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\HelpPage\HelpPage.css" />
+    <Content Include="Content\bootstrap-theme.css" />
+    <Content Include="Content\bootstrap-theme.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="favicon.ico" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="Models\ModelBankSummaries.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ModelBankSummaries.edmx</DependentUpon>
+      <LastGenOutput>ModelBankSummaries.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\ModelBankSummaries.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ModelBankSummaries.edmx</DependentUpon>
+      <LastGenOutput>ModelBankSummaries.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\ModelConfig.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ModelConfig.edmx</DependentUpon>
+      <LastGenOutput>ModelConfig.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\ModelConfig.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ModelConfig.edmx</DependentUpon>
+      <LastGenOutput>ModelConfig.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\ModelMarketPriceSeguimiento.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ModelMarketPriceSeguimiento.edmx</DependentUpon>
+      <LastGenOutput>ModelMarketPriceSeguimiento.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\ModelMarketPriceSeguimiento.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ModelMarketPriceSeguimiento.edmx</DependentUpon>
+      <LastGenOutput>ModelMarketPriceSeguimiento.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\ModelBankBalance.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ModelBankBalance.edmx</DependentUpon>
+      <LastGenOutput>ModelBankBalance.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\ModelBankBalance.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ModelBankBalance.edmx</DependentUpon>
+      <LastGenOutput>ModelBankBalance.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\ModelBankInformation.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ModelBankInformation.edmx</DependentUpon>
+      <LastGenOutput>ModelBankInformation.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\ModelBankInformation.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ModelBankInformation.edmx</DependentUpon>
+      <LastGenOutput>ModelBankInformation.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\ModelBuySell.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ModelBuySell.edmx</DependentUpon>
+      <LastGenOutput>ModelBuySell.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\ModelBuySell.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ModelBuySell.edmx</DependentUpon>
+      <LastGenOutput>ModelBuySell.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\ModelCarModels.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ModelCarModels.edmx</DependentUpon>
+      <LastGenOutput>ModelCarModels.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\ModelCarModels.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ModelCarModels.edmx</DependentUpon>
+      <LastGenOutput>ModelCarModels.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\ModelCatMap.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ModelCatMap.edmx</DependentUpon>
+      <LastGenOutput>ModelCatMap.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\ModelCatMap.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ModelCatMap.edmx</DependentUpon>
+      <LastGenOutput>ModelCatMap.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\ModelCatMapSync.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ModelCatMapSync.edmx</DependentUpon>
+      <LastGenOutput>ModelCatMapSync.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\ModelCatMapSync.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ModelCatMapSync.edmx</DependentUpon>
+      <LastGenOutput>ModelCatMapSync.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\ModelCompanies.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ModelCompanies.edmx</DependentUpon>
+      <LastGenOutput>ModelCompanies.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\ModelCompanies.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ModelCompanies.edmx</DependentUpon>
+      <LastGenOutput>ModelCompanies.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\ModelDividendos.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ModelDividendos.edmx</DependentUpon>
+      <LastGenOutput>ModelDividendos.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\ModelDividendos.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ModelDividendos.edmx</DependentUpon>
+      <LastGenOutput>ModelDividendos.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\ModelInvestment.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ModelInvestment.edmx</DependentUpon>
+      <LastGenOutput>ModelInvestment.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\ModelInvestment.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ModelInvestment.edmx</DependentUpon>
+      <LastGenOutput>ModelInvestment.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\ModelMaintenanceRecords.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ModelMaintenanceRecords.edmx</DependentUpon>
+      <LastGenOutput>ModelMaintenanceRecords.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\ModelMaintenanceRecords.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ModelMaintenanceRecords.edmx</DependentUpon>
+      <LastGenOutput>ModelMaintenanceRecords.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\ModelMap.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ModelMap.edmx</DependentUpon>
+      <LastGenOutput>ModelMap.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\ModelMap.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ModelMap.edmx</DependentUpon>
+      <LastGenOutput>ModelMap.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\ModelMapSync.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ModelMapSync.edmx</DependentUpon>
+      <LastGenOutput>ModelMapSync.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\ModelMapSync.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ModelMapSync.edmx</DependentUpon>
+      <LastGenOutput>ModelMapSync.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\ModelMarketPrices.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ModelMarketPrices.edmx</DependentUpon>
+      <LastGenOutput>ModelMarketPrices.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\ModelMarketPrices.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ModelMarketPrices.edmx</DependentUpon>
+      <LastGenOutput>ModelMarketPrices.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\ModelMonthNames.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ModelMonthNames.edmx</DependentUpon>
+      <LastGenOutput>ModelMonthNames.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\ModelMonthNames.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ModelMonthNames.edmx</DependentUpon>
+      <LastGenOutput>ModelMonthNames.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\ModelParameters.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ModelParameters.edmx</DependentUpon>
+      <LastGenOutput>ModelParameters.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\ModelParameters.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ModelParameters.edmx</DependentUpon>
+      <LastGenOutput>ModelParameters.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\ModelPriceLists.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ModelPriceLists.edmx</DependentUpon>
+      <LastGenOutput>ModelPriceLists.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\ModelPriceLists.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ModelPriceLists.edmx</DependentUpon>
+      <LastGenOutput>ModelPriceLists.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\ModelPrices.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ModelPrices.edmx</DependentUpon>
+      <LastGenOutput>ModelPrices.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\ModelPrices.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ModelPrices.edmx</DependentUpon>
+      <LastGenOutput>ModelPrices.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\ModelPurchasedItems.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ModelPurchasedItems.edmx</DependentUpon>
+      <LastGenOutput>ModelPurchasedItems.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\ModelPurchasedItems.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ModelPurchasedItems.edmx</DependentUpon>
+      <LastGenOutput>ModelPurchasedItems.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\ModelPurchasedItemsSync.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ModelPurchasedItemsSync.edmx</DependentUpon>
+      <LastGenOutput>ModelPurchasedItemsSync.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\ModelPurchasedItemsSync.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ModelPurchasedItemsSync.edmx</DependentUpon>
+      <LastGenOutput>ModelPurchasedItemsSync.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\ModelSalesPersons.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ModelSalesPersons.edmx</DependentUpon>
+      <LastGenOutput>ModelSalesPersons.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\ModelSalesPersons.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ModelSalesPersons.edmx</DependentUpon>
+      <LastGenOutput>ModelSalesPersons.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\ModelSelfLoans.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ModelSelfLoans.edmx</DependentUpon>
+      <LastGenOutput>ModelSelfLoans.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\ModelSelfLoans.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ModelSelfLoans.edmx</DependentUpon>
+      <LastGenOutput>ModelSelfLoans.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\ModelSoldItems.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ModelSoldItems.edmx</DependentUpon>
+      <LastGenOutput>ModelSoldItems.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\ModelSoldItems.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ModelSoldItems.edmx</DependentUpon>
+      <LastGenOutput>ModelSoldItems.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\ModelSoldItemsSync.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ModelSoldItemsSync.edmx</DependentUpon>
+      <LastGenOutput>ModelSoldItemsSync.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\ModelSoldItemsSync.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ModelSoldItemsSync.edmx</DependentUpon>
+      <LastGenOutput>ModelSoldItemsSync.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\ModelSpenceCategory.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ModelSpenceCategory.edmx</DependentUpon>
+      <LastGenOutput>ModelSpenceCategory.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\ModelSpenceCategory.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ModelSpenceCategory.edmx</DependentUpon>
+      <LastGenOutput>ModelSpenceCategory.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\ModelSpences.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ModelSpences.edmx</DependentUpon>
+      <LastGenOutput>ModelSpences.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\ModelSpences.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ModelSpences.edmx</DependentUpon>
+      <LastGenOutput>ModelSpences.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\ModelSyncAudit.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ModelSyncAudit.edmx</DependentUpon>
+      <LastGenOutput>ModelSyncAudit.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\ModelSyncAudit.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ModelSyncAudit.edmx</DependentUpon>
+      <LastGenOutput>ModelSyncAudit.cs</LastGenOutput>
+    </Content>
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Areas\HelpPage\Views\Web.config" />
+    <Content Include="Areas\HelpPage\Views\Shared\_Layout.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\ResourceModel.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\Index.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\TextSample.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\SimpleTypeModelDescription.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\Samples.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\Parameters.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\ModelDescriptionLink.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\KeyValuePairModelDescription.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\InvalidSample.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\ImageSample.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\HelpPageApiModel.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\EnumTypeModelDescription.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\DictionaryModelDescription.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\ComplexTypeModelDescription.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\CollectionModelDescription.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\ApiGroup.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\Api.cshtml" />
+    <EntityDeploy Include="Models\ModelCatMap.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>ModelCatMap.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\ModelCatMap.edmx.diagram">
+      <DependentUpon>ModelCatMap.edmx</DependentUpon>
+    </Content>
+    <EntityDeploy Include="Models\ModelMap.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>ModelMap.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\ModelMap.edmx.diagram">
+      <DependentUpon>ModelMap.edmx</DependentUpon>
+    </Content>
+    <EntityDeploy Include="Models\ModelCatMapSync.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>ModelCatMapSync.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\ModelCatMapSync.edmx.diagram">
+      <DependentUpon>ModelCatMapSync.edmx</DependentUpon>
+    </Content>
+    <EntityDeploy Include="Models\ModelMapSync.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>ModelMapSync.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\ModelMapSync.edmx.diagram">
+      <DependentUpon>ModelMapSync.edmx</DependentUpon>
+    </Content>
+    <EntityDeploy Include="Models\ModelPurchasedItemsSync.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>ModelPurchasedItemsSync.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\ModelPurchasedItemsSync.edmx.diagram">
+      <DependentUpon>ModelPurchasedItemsSync.edmx</DependentUpon>
+    </Content>
+    <EntityDeploy Include="Models\ModelSoldItemsSync.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>ModelSoldItemsSync.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\ModelSoldItemsSync.edmx.diagram">
+      <DependentUpon>ModelSoldItemsSync.edmx</DependentUpon>
+    </Content>
+    <EntityDeploy Include="Models\ModelPriceLists.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>ModelPriceLists.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\ModelPriceLists.edmx.diagram">
+      <DependentUpon>ModelPriceLists.edmx</DependentUpon>
+    </Content>
+    <EntityDeploy Include="Models\ModelPrices.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>ModelPrices.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\ModelPrices.edmx.diagram">
+      <DependentUpon>ModelPrices.edmx</DependentUpon>
+    </Content>
+    <EntityDeploy Include="Models\ModelBuySell.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>ModelBuySell.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\ModelBuySell.edmx.diagram">
+      <DependentUpon>ModelBuySell.edmx</DependentUpon>
+    </Content>
+    <EntityDeploy Include="Models\ModelSoldItems.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>ModelSoldItems.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\ModelSoldItems.edmx.diagram">
+      <DependentUpon>ModelSoldItems.edmx</DependentUpon>
+    </Content>
+    <EntityDeploy Include="Models\ModelPurchasedItems.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>ModelPurchasedItems.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\ModelPurchasedItems.edmx.diagram">
+      <DependentUpon>ModelPurchasedItems.edmx</DependentUpon>
+    </Content>
+    <EntityDeploy Include="Models\ModelSpenceCategory.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>ModelSpenceCategory.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\ModelSpenceCategory.edmx.diagram">
+      <DependentUpon>ModelSpenceCategory.edmx</DependentUpon>
+    </Content>
+    <EntityDeploy Include="Models\ModelSpences.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>ModelSpences.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\ModelSpences.edmx.diagram">
+      <DependentUpon>ModelSpences.edmx</DependentUpon>
+    </Content>
+    <EntityDeploy Include="Models\ModelBankInformation.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>ModelBankInformation.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\ModelBankInformation.edmx.diagram">
+      <DependentUpon>ModelBankInformation.edmx</DependentUpon>
+    </Content>
+    <EntityDeploy Include="Models\ModelBankBalance.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>ModelBankBalance.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\ModelBankBalance.edmx.diagram">
+      <DependentUpon>ModelBankBalance.edmx</DependentUpon>
+    </Content>
+    <EntityDeploy Include="Models\ModelCarModels.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>ModelCarModels.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\ModelCarModels.edmx.diagram">
+      <DependentUpon>ModelCarModels.edmx</DependentUpon>
+    </Content>
+    <EntityDeploy Include="Models\ModelMaintenanceRecords.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>ModelMaintenanceRecords.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\ModelMaintenanceRecords.edmx.diagram">
+      <DependentUpon>ModelMaintenanceRecords.edmx</DependentUpon>
+    </Content>
+    <EntityDeploy Include="Models\ModelCompanies.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>ModelCompanies.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\ModelCompanies.edmx.diagram">
+      <DependentUpon>ModelCompanies.edmx</DependentUpon>
+    </Content>
+    <EntityDeploy Include="Models\ModelDividendos.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>ModelDividendos.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\ModelDividendos.edmx.diagram">
+      <DependentUpon>ModelDividendos.edmx</DependentUpon>
+    </Content>
+    <EntityDeploy Include="Models\ModelInvestment.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>ModelInvestment.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\ModelInvestment.edmx.diagram">
+      <DependentUpon>ModelInvestment.edmx</DependentUpon>
+    </Content>
+    <EntityDeploy Include="Models\ModelMarketPrices.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>ModelMarketPrices.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\ModelMarketPrices.edmx.diagram">
+      <DependentUpon>ModelMarketPrices.edmx</DependentUpon>
+    </Content>
+    <EntityDeploy Include="Models\ModelParameters.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>ModelParameters.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\ModelParameters.edmx.diagram">
+      <DependentUpon>ModelParameters.edmx</DependentUpon>
+    </Content>
+    <EntityDeploy Include="Models\ModelMarketPriceSeguimiento.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>ModelMarketPriceSeguimiento.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\ModelMarketPriceSeguimiento.edmx.diagram">
+      <DependentUpon>ModelMarketPriceSeguimiento.edmx</DependentUpon>
+    </Content>
+    <EntityDeploy Include="Models\ModelMonthNames.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>ModelMonthNames.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\ModelMonthNames.edmx.diagram">
+      <DependentUpon>ModelMonthNames.edmx</DependentUpon>
+    </Content>
+    <EntityDeploy Include="Models\ModelBankSummaries.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>ModelBankSummaries.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\ModelBankSummaries.edmx.diagram">
+      <DependentUpon>ModelBankSummaries.edmx</DependentUpon>
+    </Content>
+    <EntityDeploy Include="Models\ModelSalesPersons.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>ModelSalesPersons.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\ModelSalesPersons.edmx.diagram">
+      <DependentUpon>ModelSalesPersons.edmx</DependentUpon>
+    </Content>
+    <EntityDeploy Include="Models\ModelSyncAudit.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>ModelSyncAudit.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\ModelSyncAudit.edmx.diagram">
+      <DependentUpon>ModelSyncAudit.edmx</DependentUpon>
+    </Content>
+    <EntityDeploy Include="Models\ModelSelfLoans.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>ModelSelfLoans.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\ModelSelfLoans.edmx.diagram">
+      <DependentUpon>ModelSelfLoans.edmx</DependentUpon>
+    </Content>
+    <EntityDeploy Include="Models\ModelConfig.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>ModelConfig.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\ModelConfig.edmx.diagram">
+      <DependentUpon>ModelConfig.edmx</DependentUpon>
+    </Content>
+    <None Include="Scripts\jquery-3.4.1.intellisense.js" />
+    <Content Include="Scripts\jquery-3.4.1.js" />
+    <Content Include="Scripts\jquery-3.4.1.min.js" />
+    <Content Include="Scripts\jquery-3.4.1.slim.js" />
+    <Content Include="Scripts\jquery-3.4.1.slim.min.js" />
+    <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Areas\HelpPage\Views\_ViewStart.cshtml" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\bootstrap.min.css.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\bootstrap.css.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\bootstrap-theme.min.css.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\bootstrap-theme.css.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+    <Content Include="Scripts\jquery-3.4.1.slim.min.map" />
+    <Content Include="Scripts\jquery-3.4.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>60131</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:82</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', 'packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

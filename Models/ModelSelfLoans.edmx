@@ -1,0 +1,94 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="SelfLoansModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="SelfLoans">
+          <Key>
+            <PropertyRef Name="LoanId" />
+          </Key>
+          <Property Name="LoanId" Type="tinyint" Nullable="false" />
+          <Property Name="LoanDescription" Type="varchar" MaxLength="150" />
+          <Property Name="LoanDate" Type="datetime" />
+          <Property Name="NumberOfInstallments" Type="tinyint" />
+          <Property Name="Amount" Type="decimal" Precision="10" Scale="2" />
+          <Property Name="AlreadyPayed" Type="decimal" Precision="10" Scale="2" />
+          <Property Name="YourCurrentDebt" Type="decimal" Precision="10" Scale="2" />
+          <Property Name="EachInstallment" Type="decimal" Precision="10" Scale="2" />
+          <Property Name="Estado" Type="varchar" MaxLength="20" />
+          <Property Name="PaidDate" Type="datetime" />
+        </EntityType>
+        <EntityContainer Name="SelfLoansModelStoreContainer">
+          <EntitySet Name="SelfLoans" EntityType="Self.SelfLoans" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="SelfLoansModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="SelfLoans">
+          <Key>
+            <PropertyRef Name="LoanId" />
+          </Key>
+          <Property Name="LoanId" Type="Byte" Nullable="false" />
+          <Property Name="LoanDescription" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="LoanDate" Type="DateTime" Precision="3" />
+          <Property Name="NumberOfInstallments" Type="Byte" />
+          <Property Name="Amount" Type="Decimal" Precision="10" Scale="2" />
+          <Property Name="AlreadyPayed" Type="Decimal" Precision="10" Scale="2" />
+          <Property Name="YourCurrentDebt" Type="Decimal" Precision="10" Scale="2" />
+          <Property Name="EachInstallment" Type="Decimal" Precision="10" Scale="2" />
+          <Property Name="Estado" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="PaidDate" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityContainer Name="SelfLoansEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="SelfLoans" EntityType="Self.SelfLoans" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="SelfLoansModelStoreContainer" CdmEntityContainer="SelfLoansEntities">
+          <EntitySetMapping Name="SelfLoans">
+            <EntityTypeMapping TypeName="SelfLoansModel.SelfLoans">
+              <MappingFragment StoreEntitySet="SelfLoans">
+                <ScalarProperty Name="LoanId" ColumnName="LoanId" />
+                <ScalarProperty Name="LoanDescription" ColumnName="LoanDescription" />
+                <ScalarProperty Name="LoanDate" ColumnName="LoanDate" />
+                <ScalarProperty Name="NumberOfInstallments" ColumnName="NumberOfInstallments" />
+                <ScalarProperty Name="Amount" ColumnName="Amount" />
+                <ScalarProperty Name="AlreadyPayed" ColumnName="AlreadyPayed" />
+                <ScalarProperty Name="YourCurrentDebt" ColumnName="YourCurrentDebt" />
+                <ScalarProperty Name="EachInstallment" ColumnName="EachInstallment" />
+                <ScalarProperty Name="Estado" ColumnName="Estado" />
+                <ScalarProperty Name="PaidDate" ColumnName="PaidDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

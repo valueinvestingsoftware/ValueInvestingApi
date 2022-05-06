@@ -1,0 +1,99 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="DividendosModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Dividendos">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CompanyID" Type="tinyint" Nullable="false" />
+          <Property Name="Year" Type="smallint" Nullable="false" />
+          <Property Name="DividendosEfectivo" Type="decimal" Precision="12" Scale="6" />
+          <Property Name="DividendosAccion" Type="decimal" Precision="12" Scale="6" />
+          <Property Name="AccionesPrecedentes" Type="int" />
+          <Property Name="AccionesPorAccion" Type="decimal" Precision="10" Scale="6" />
+          <Property Name="EfectivoPorAccion" Type="decimal" Precision="10" Scale="6" />
+          <Property Name="Distribute" Type="varchar" MaxLength="2" />
+          <Property Name="Graph" Type="varchar" MaxLength="2" />
+          <Property Name="AvSalePrice" Type="decimal" Precision="10" Scale="6" />
+          <Property Name="StandardDeviation" Type="decimal" Precision="12" Scale="6" />
+          <Property Name="Peso" Type="decimal" Precision="12" Scale="6" />
+          <Property Name="Riesgo" Type="decimal" Precision="12" Scale="6" />
+        </EntityType>
+        <EntityContainer Name="DividendosModelStoreContainer">
+          <EntitySet Name="Dividendos" EntityType="Self.Dividendos" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="DividendosModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Dividendos">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CompanyID" Type="Byte" Nullable="false" />
+          <Property Name="Year" Type="Int16" Nullable="false" />
+          <Property Name="DividendosEfectivo" Type="Decimal" Precision="12" Scale="6" />
+          <Property Name="DividendosAccion" Type="Decimal" Precision="12" Scale="6" />
+          <Property Name="AccionesPrecedentes" Type="Int32" />
+          <Property Name="AccionesPorAccion" Type="Decimal" Precision="10" Scale="6" />
+          <Property Name="EfectivoPorAccion" Type="Decimal" Precision="10" Scale="6" />
+          <Property Name="Distribute" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="Graph" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="AvSalePrice" Type="Decimal" Precision="10" Scale="6" />
+        </EntityType>
+        <EntityContainer Name="DividendosEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Dividendos" EntityType="Self.Dividendos" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="DividendosModelStoreContainer" CdmEntityContainer="DividendosEntities">
+          <EntitySetMapping Name="Dividendos">
+            <EntityTypeMapping TypeName="DividendosModel.Dividendos">
+              <MappingFragment StoreEntitySet="Dividendos">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
+                <ScalarProperty Name="Year" ColumnName="Year" />
+                <ScalarProperty Name="DividendosEfectivo" ColumnName="DividendosEfectivo" />
+                <ScalarProperty Name="DividendosAccion" ColumnName="DividendosAccion" />
+                <ScalarProperty Name="AccionesPrecedentes" ColumnName="AccionesPrecedentes" />
+                <ScalarProperty Name="AccionesPorAccion" ColumnName="AccionesPorAccion" />
+                <ScalarProperty Name="EfectivoPorAccion" ColumnName="EfectivoPorAccion" />
+                <ScalarProperty Name="Distribute" ColumnName="Distribute" />
+                <ScalarProperty Name="Graph" ColumnName="Graph" />
+                <ScalarProperty Name="AvSalePrice" ColumnName="AvSalePrice" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

@@ -1,0 +1,102 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="MaintenanceRecordsModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="MaintenanceRecords">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="smallint" Nullable="false" />
+          <Property Name="MaintenanceName" Type="varchar" MaxLength="100" />
+          <Property Name="Comment" Type="varchar" MaxLength="100" />
+          <Property Name="ModelId" Type="tinyint" />
+          <Property Name="startKm" Type="int" />
+          <Property Name="endKm" Type="int" />
+          <Property Name="NextAfter" Type="int" />
+          <Property Name="RecordDate" Type="datetime" />
+          <Property Name="LastEditDate" Type="datetime" />
+          <Property Name="Fulfilled" Type="bit" />
+          <Property Name="CreatedInApp" Type="bit" />
+          <Property Name="Deleted" Type="bit" />
+          <Property Name="FechaSync" Type="datetime" />
+        </EntityType>
+        <EntityContainer Name="MaintenanceRecordsModelStoreContainer">
+          <EntitySet Name="MaintenanceRecords" EntityType="Self.MaintenanceRecords" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="MaintenanceRecordsModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="MaintenanceRecordsEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="MaintenanceRecords" EntityType="MaintenanceRecordsModel.MaintenanceRecords" />
+        </EntityContainer>
+        <EntityType Name="MaintenanceRecords">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int16" Nullable="false" />
+          <Property Name="MaintenanceName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Comment" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="ModelId" Type="Byte" />
+          <Property Name="startKm" Type="Int32" />
+          <Property Name="endKm" Type="Int32" />
+          <Property Name="NextAfter" Type="Int32" />
+          <Property Name="RecordDate" Type="DateTime" Precision="3" />
+          <Property Name="LastEditDate" Type="DateTime" Precision="3" />
+          <Property Name="Fulfilled" Type="Boolean" />
+          <Property Name="CreatedInApp" Type="Boolean" />
+          <Property Name="Deleted" Type="Boolean" />
+          <Property Name="FechaSync" Type="DateTime" Precision="3" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="MaintenanceRecordsModelStoreContainer" CdmEntityContainer="MaintenanceRecordsEntities">
+          <EntitySetMapping Name="MaintenanceRecords">
+            <EntityTypeMapping TypeName="MaintenanceRecordsModel.MaintenanceRecords">
+              <MappingFragment StoreEntitySet="MaintenanceRecords">
+                <ScalarProperty Name="FechaSync" ColumnName="FechaSync" />
+                <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+                <ScalarProperty Name="CreatedInApp" ColumnName="CreatedInApp" />
+                <ScalarProperty Name="Fulfilled" ColumnName="Fulfilled" />
+                <ScalarProperty Name="LastEditDate" ColumnName="LastEditDate" />
+                <ScalarProperty Name="RecordDate" ColumnName="RecordDate" />
+                <ScalarProperty Name="NextAfter" ColumnName="NextAfter" />
+                <ScalarProperty Name="endKm" ColumnName="endKm" />
+                <ScalarProperty Name="startKm" ColumnName="startKm" />
+                <ScalarProperty Name="ModelId" ColumnName="ModelId" />
+                <ScalarProperty Name="Comment" ColumnName="Comment" />
+                <ScalarProperty Name="MaintenanceName" ColumnName="MaintenanceName" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

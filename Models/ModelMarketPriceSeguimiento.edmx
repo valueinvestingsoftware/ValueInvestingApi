@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="MarketPriceSeguimientoModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="MarketPriceSeguimiento">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CompanyId" Type="tinyint" />
+          <Property Name="Day" Type="datetime" />
+          <Property Name="MarketPrice" Type="decimal" Precision="6" Scale="4" />
+          <Property Name="RecordedDateAndTime" Type="datetime" />
+          <Property Name="FechaSync" Type="datetime" />
+        </EntityType>
+        <EntityContainer Name="MarketPriceSeguimientoModelStoreContainer">
+          <EntitySet Name="MarketPriceSeguimiento" EntityType="Self.MarketPriceSeguimiento" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="MarketPriceSeguimientoModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="MarketPriceSeguimiento">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CompanyId" Type="Byte" />
+          <Property Name="Day" Type="DateTime" Precision="3" />
+          <Property Name="MarketPrice" Type="Decimal" Precision="6" Scale="4" />
+          <Property Name="RecordedDateAndTime" Type="DateTime" Precision="3" />
+          <Property Name="FechaSync" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityContainer Name="MarketPriceSeguimientoEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="MarketPriceSeguimiento" EntityType="Self.MarketPriceSeguimiento" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="MarketPriceSeguimientoModelStoreContainer" CdmEntityContainer="MarketPriceSeguimientoEntities">
+          <EntitySetMapping Name="MarketPriceSeguimiento">
+            <EntityTypeMapping TypeName="MarketPriceSeguimientoModel.MarketPriceSeguimiento">
+              <MappingFragment StoreEntitySet="MarketPriceSeguimiento">
+                <ScalarProperty Name="FechaSync" ColumnName="FechaSync" />
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="CompanyId" ColumnName="CompanyId" />
+                <ScalarProperty Name="Day" ColumnName="Day" />
+                <ScalarProperty Name="MarketPrice" ColumnName="MarketPrice" />
+                <ScalarProperty Name="RecordedDateAndTime" ColumnName="RecordedDateAndTime" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

@@ -1,0 +1,120 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="SoldItemsSyncModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="SoldItems_Sync">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="bigint" Nullable="false" />
+          <Property Name="itemid" Type="int" />
+          <Property Name="ClientId" Type="int" />
+          <Property Name="SaleQuantity" Type="decimal" Precision="8" Scale="2" />
+          <Property Name="SalePrice" Type="decimal" Precision="8" Scale="4" />
+          <Property Name="SaleDate" Type="datetime" />
+          <Property Name="dia" Type="varchar" MaxLength="20" />
+          <Property Name="DiaNumber" Type="tinyint" />
+          <Property Name="Observations" Type="varchar" MaxLength="500" />
+          <Property Name="Profit" Type="decimal" Precision="8" Scale="4" />
+          <Property Name="MSold" Type="varchar" MaxLength="20" />
+          <Property Name="MonthNumber" Type="tinyint" />
+          <Property Name="YSold" Type="smallint" />
+          <Property Name="SoldInApp" Type="bit" />
+          <Property Name="Sincronizado" Type="bit" />
+          <Property Name="CustomerControl" Type="varchar" MaxLength="150" />
+          <Property Name="ItemControl" Type="varchar" MaxLength="200" />
+          <Property Name="VDocNum" Type="int" />
+          <Property Name="CodVendedor" Type="tinyint" />
+          <Property Name="OrderId" Type="varchar(max)" />
+          <Property Name="StatusId" Type="tinyint" />
+          <Property Name="SoldInWeb" Type="bit" />
+          <Property Name="FechaSync" Type="datetime" />
+        </EntityType>
+        <EntityContainer Name="SoldItemsSyncModelStoreContainer">
+          <EntitySet Name="SoldItems_Sync" EntityType="Self.SoldItems_Sync" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="SoldItemsSyncModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="SoldItemsSyncEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="SoldItems_Sync" EntityType="SoldItemsSyncModel.SoldItems_Sync" />
+        </EntityContainer>
+        <EntityType Name="SoldItems_Sync">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int64" Nullable="false" />
+          <Property Name="itemid" Type="Int32" />
+          <Property Name="ClientId" Type="Int32" />
+          <Property Name="SaleQuantity" Type="Decimal" Precision="8" Scale="2" />
+          <Property Name="SalePrice" Type="Decimal" Precision="8" Scale="4" />
+          <Property Name="SaleDate" Type="DateTime" Precision="3" />
+          <Property Name="dia" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="DiaNumber" Type="Byte" />
+          <Property Name="Observations" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="Profit" Type="Decimal" Precision="8" Scale="4" />
+          <Property Name="MSold" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="MonthNumber" Type="Byte" />
+          <Property Name="YSold" Type="Int16" />
+          <Property Name="SoldInApp" Type="Boolean" />
+          <Property Name="Sincronizado" Type="Boolean" />
+          <Property Name="CodVendedor" Type="Byte" />
+          <Property Name="FechaSync" Type="DateTime" Precision="3" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="SoldItemsSyncModelStoreContainer" CdmEntityContainer="SoldItemsSyncEntities">
+          <EntitySetMapping Name="SoldItems_Sync">
+            <EntityTypeMapping TypeName="SoldItemsSyncModel.SoldItems_Sync">
+              <MappingFragment StoreEntitySet="SoldItems_Sync">
+                <ScalarProperty Name="FechaSync" ColumnName="FechaSync" />
+                <ScalarProperty Name="CodVendedor" ColumnName="CodVendedor" />
+                <ScalarProperty Name="Sincronizado" ColumnName="Sincronizado" />
+                <ScalarProperty Name="SoldInApp" ColumnName="SoldInApp" />
+                <ScalarProperty Name="YSold" ColumnName="YSold" />
+                <ScalarProperty Name="MonthNumber" ColumnName="MonthNumber" />
+                <ScalarProperty Name="MSold" ColumnName="MSold" />
+                <ScalarProperty Name="Profit" ColumnName="Profit" />
+                <ScalarProperty Name="Observations" ColumnName="Observations" />
+                <ScalarProperty Name="DiaNumber" ColumnName="DiaNumber" />
+                <ScalarProperty Name="dia" ColumnName="dia" />
+                <ScalarProperty Name="SaleDate" ColumnName="SaleDate" />
+                <ScalarProperty Name="SalePrice" ColumnName="SalePrice" />
+                <ScalarProperty Name="SaleQuantity" ColumnName="SaleQuantity" />
+                <ScalarProperty Name="ClientId" ColumnName="ClientId" />
+                <ScalarProperty Name="itemid" ColumnName="itemid" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

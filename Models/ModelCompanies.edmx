@@ -1,0 +1,139 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="CompaniesModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Companies">
+          <Key>
+            <PropertyRef Name="CompanyId" />
+          </Key>
+          <Property Name="CompanyId" Type="smallint" Nullable="false" />
+          <Property Name="Company" Type="varchar" MaxLength="80" Nullable="false" />
+          <Property Name="Popularity" Type="smallint" />
+          <Property Name="CEO" Type="smallint" />
+          <Property Name="Intrinsic" Type="smallint" />
+          <Property Name="Industria" Type="smallint" />
+          <Property Name="Sector" Type="smallint" />
+          <Property Name="NominalValue" Type="decimal" Precision="8" Scale="1" />
+          <Property Name="StockDividends" Type="smallint" />
+          <Property Name="RealPrice" Type="decimal" Precision="8" Scale="4" />
+          <Property Name="RealVsNominal" Type="smallint" />
+          <Property Name="RealValueTrend" Type="smallint" />
+          <Property Name="NotPayingDividends" Type="varchar" MaxLength="3" />
+          <Property Name="Reinvestment" Type="smallint" />
+          <Property Name="Expectations" Type="smallint" />
+          <Property Name="CEO_Weight" Type="decimal" Precision="8" Scale="4" />
+          <Property Name="Popularity_Weight" Type="decimal" Precision="8" Scale="4" />
+          <Property Name="Expectations_Weight" Type="decimal" Precision="8" Scale="4" />
+          <Property Name="Intrinsic_Weight" Type="decimal" Precision="8" Scale="4" />
+          <Property Name="StockDividends_Weight" Type="decimal" Precision="8" Scale="4" />
+          <Property Name="RealVsNominal_Weight" Type="decimal" Precision="8" Scale="4" />
+          <Property Name="RealValueTrend_Weight" Type="decimal" Precision="8" Scale="4" />
+          <Property Name="Reinvestment_Weight" Type="decimal" Precision="8" Scale="4" />
+          <Property Name="CEO_Ranking" Type="smallint" />
+          <Property Name="Popularity_Ranking" Type="smallint" />
+          <Property Name="Expectations_Ranking" Type="smallint" />
+          <Property Name="Intrinsic_Ranking" Type="smallint" />
+          <Property Name="StockDividends_Ranking" Type="smallint" />
+          <Property Name="RealVsNominal_Ranking" Type="smallint" />
+          <Property Name="RealValueTrend_Ranking" Type="smallint" />
+          <Property Name="Reinvestment_Ranking" Type="smallint" />
+          <Property Name="Ponderated" Type="decimal" Precision="8" Scale="4" />
+          <Property Name="Ranking" Type="smallint" />
+          <Property Name="MarketPrice" Type="decimal" Precision="8" Scale="4" />
+          <Property Name="Exclude" Type="varchar" MaxLength="2" />
+          <Property Name="DivEfectivo" Type="decimal" Precision="12" Scale="6" />
+          <Property Name="DivAccion" Type="smallint" />
+          <Property Name="Image" Type="image" />
+          <Property Name="Poblacion" Type="smallint" />
+          <Property Name="Media" Type="decimal" Precision="12" Scale="6" />
+          <Property Name="StandardDeviation" Type="decimal" Precision="12" Scale="6" />
+          <Property Name="TotDividendos" Type="decimal" Precision="12" Scale="6" />
+          <Property Name="Invertido" Type="decimal" Precision="12" Scale="6" />
+          <Property Name="Peso" Type="decimal" Precision="12" Scale="6" />
+          <Property Name="UpdateDate" Type="datetime" />
+          <Property Name="Capital" Type="bigint" />
+          <Property Name="Debt" Type="bigint" />
+          <Property Name="DebtRatioValor" Type="decimal" Precision="8" Scale="4" />
+          <Property Name="DebtRatio" Type="int" />
+          <Property Name="DebtRatio_Weight" Type="decimal" Precision="8" Scale="4" />
+          <Property Name="DebtRatio_Ranking" Type="smallint" />
+          <Property Name="Bubble" Type="smallint" />
+          <Property Name="Bubble_Weight" Type="decimal" Precision="8" Scale="4" />
+          <Property Name="Bubble_Ranking" Type="smallint" />
+          <Property Name="CashOnHand" Type="bigint" />
+          <Property Name="OperatingExpenses" Type="bigint" />
+          <Property Name="DaysCashOnHand" Type="int" />
+          <Property Name="CreatedInApp" Type="bit" />
+        </EntityType>
+        <EntityContainer Name="CompaniesModelStoreContainer">
+          <EntitySet Name="Companies" EntityType="Self.Companies" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="CompaniesModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Companies">
+          <Key>
+            <PropertyRef Name="CompanyId" />
+          </Key>
+          <Property Name="CompanyId" Type="Int16" Nullable="false" />
+          <Property Name="Company" Type="String" MaxLength="80" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="RealPrice" Type="Decimal" Precision="8" Scale="4" />
+          <Property Name="Ponderated" Type="Decimal" Precision="8" Scale="4" />
+          <Property Name="Ranking" Type="Int16" />
+          <Property Name="MarketPrice" Type="Decimal" Precision="8" Scale="4" />
+          <Property Name="Exclude" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="Image" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="CreatedInApp" Type="Boolean" />
+          </EntityType>
+        <EntityContainer Name="CompaniesEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Companies" EntityType="Self.Companies" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="CompaniesModelStoreContainer" CdmEntityContainer="CompaniesEntities">
+          <EntitySetMapping Name="Companies">
+            <EntityTypeMapping TypeName="CompaniesModel.Companies">
+              <MappingFragment StoreEntitySet="Companies">
+                <ScalarProperty Name="CreatedInApp" ColumnName="CreatedInApp" />
+                <ScalarProperty Name="CompanyId" ColumnName="CompanyId" />
+                <ScalarProperty Name="Company" ColumnName="Company" />
+                <ScalarProperty Name="RealPrice" ColumnName="RealPrice" />
+                <ScalarProperty Name="Ponderated" ColumnName="Ponderated" />
+                <ScalarProperty Name="Ranking" ColumnName="Ranking" />
+                <ScalarProperty Name="MarketPrice" ColumnName="MarketPrice" />
+                <ScalarProperty Name="Exclude" ColumnName="Exclude" />
+                <ScalarProperty Name="Image" ColumnName="Image" />
+                </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
